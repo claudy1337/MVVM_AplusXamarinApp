@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using AplusXamarinApp.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -35,6 +35,7 @@ namespace AplusXamarinApp.Page
         {
             LVProject.ItemsSource = App.Db.GetItems();
             base.OnAppearing();
+            BindingContext = new ProjectListViewModel() { Navigation = this.Navigation };
         }
         private void UpdateList()
         {
